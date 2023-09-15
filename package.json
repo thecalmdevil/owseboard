@@ -1,0 +1,19 @@
+{
+  "name": "owseboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "owse-board.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecalmdevil/owseboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thecalmdevil/owseboard/issues"
+  },
+  "homepage": "https://github.com/thecalmdevil/owseboard#readme"
+}
