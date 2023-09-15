@@ -59,7 +59,25 @@ const OWSEBoard = (function () {
         return month;
     }
 
+    // Private variables
+    let isDarkMode = false;
+    let calendarLanguage = 'en'; // Default language is English
+
     // Public methods and properties
+
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+        const calendar = document.getElementById('calendar');
+        isDarkMode = !isDarkMode;
+        calendar.classList.toggle('dark-mode', isDarkMode);
+    }
+
+    // Function to set the calendar's language
+    function setCalendarLanguage(language) {
+        calendarLanguage = language;
+        // Implement logic to change the language of the calendar here (not implemented in this example)
+    }
+
     return {
         initialize: function () {
             const calendar = document.getElementById('calendar');
@@ -85,6 +103,25 @@ const OWSEBoard = (function () {
                 const monthElement = createMonthElement(monthInfo.name, monthInfo.days);
                 calendar.appendChild(monthElement);
             });
+
+            // Handle dark mode toggle
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            darkModeToggle.addEventListener('click', toggleDarkMode);
+        },
+
+        // Get the current dark mode status
+        isDarkModeEnabled: function () {
+            return isDarkMode;
+        },
+
+        // Set the calendar's language
+        setLanguage: function (language) {
+            setCalendarLanguage(language);
+        },
+
+        // Get the current calendar language
+        getLanguage: function () {
+            return calendarLanguage;
         },
     };
 })();
