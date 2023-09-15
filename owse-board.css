@@ -1,3 +1,12 @@
+/* Custom color variables */
+:root {
+    --primary-color: #2196F3; /* Blue */
+    --secondary-color: #FF5722; /* Orange */
+    --background-color: #f4f4f4; /* Light Gray */
+    --card-background: #fff; /* White */
+    --hover-color: #f0f0f0; /* Light Gray (Hover) */
+}
+
 /* Reset some default styles */
 * {
     margin: 0;
@@ -7,11 +16,11 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--background-color);
 }
 
 .header {
-    background-color: #2196F3;
+    background-color: var(--primary-color);
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -25,7 +34,7 @@ body {
     max-width: 480px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--card-background);
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
@@ -35,7 +44,7 @@ body {
 }
 
 .month h2 {
-    color: #2196F3;
+    color: var(--primary-color);
     font-size: 1.5rem;
     margin-bottom: 10px;
     text-align: center;
@@ -48,7 +57,7 @@ body {
 }
 
 .day {
-    background-color: #fff;
+    background-color: var(--card-background);
     padding: 10px;
     text-align: center;
     border-radius: 5px;
@@ -57,7 +66,7 @@ body {
 }
 
 .day:hover {
-    background-color: #f0f0f0;
+    background-color: var(--hover-color);
 }
 
 .day img {
@@ -72,7 +81,7 @@ body {
 }
 
 .day label {
-    background-color: #2196F3;
+    background-color: var(--primary-color);
     color: #fff;
     padding: 5px 10px;
     border-radius: 4px;
@@ -81,5 +90,5 @@ body {
 }
 
 .day label:hover {
-    background-color: #1976D2;
+    background-color: var(--secondary-color);
 }
