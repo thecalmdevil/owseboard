@@ -39,14 +39,55 @@ const OWSEBoard = (function () {
         return day;
     }
 
+    function createMonthElement(monthName, daysInMonth) {
+        const month = document.createElement('div');
+        month.className = 'month';
+
+        const monthTitle = document.createElement('h2');
+        monthTitle.textContent = monthName;
+
+        const daysContainer = document.createElement('div');
+        daysContainer.className = 'days';
+
+        for (let i = 1; i <= daysInMonth; i++) {
+            daysContainer.appendChild(createDayElement(i));
+        }
+
+        month.appendChild(monthTitle);
+        month.appendChild(daysContainer);
+
+        return month;
+    }
+
     // Public methods and properties
     return {
         initialize: function () {
-            // Create the calendar
             const calendar = document.getElementById('calendar');
-            for (let i = 1; i <= 31; i++) {
-                calendar.appendChild(createDayElement(i));
-            }
+
+            // Define the months and their respective days
+            const months = [
+                { name: 'January', days: 31 },
+                { name: 'February', days: 28 },
+                { name: 'March', days: 31 },
+                { name: 'April', days: 30 },
+                { name: 'May', days: 31 },
+                { name: 'June', days: 30 },
+                { name: 'July', days: 31 },
+                { name: 'August', days: 31 },
+                { name: 'September', days: 30 },
+                { name: 'October', days: 31 },
+                { name: 'November', days: 30 },
+                { name: 'December', days: 31 }
+            ];
+
+            // Create and append each month to the calendar
+            months.forEach((monthInfo) => {
+                const monthElement = createMonthElement(monthInfo.name, monthInfo.days);
+                calendar.appendChild(monthElement);
+            });
         },
     };
 })();
+
+// Initialize the OWSEBoard library
+OWSEBoard.initialize();

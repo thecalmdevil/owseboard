@@ -37,6 +37,7 @@ body {
     background-color: var(--card-background);
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow-x: auto; /* Add overflow property to prevent margin bleeding */
 }
 
 .month {
@@ -54,8 +55,10 @@ body {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 10px;
+    overflow-x: auto; /* Add overflow property to prevent margin bleeding */
 }
 
+/* Adjust margin for the day elements */
 .day {
     background-color: var(--card-background);
     padding: 10px;
@@ -63,6 +66,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin: 5px; /* Add margin to separate day elements */
 }
 
 .day:hover {
@@ -91,4 +95,28 @@ body {
 
 .day label:hover {
     background-color: var(--secondary-color);
+}
+
+/* Media query for screens smaller than 480px (mobile devices) */
+@media (max-width: 480px) {
+    .calendar {
+        max-width: 100%;
+        margin: 10px;
+        padding: 10px;
+        overflow-x: auto; /* Keep overflow for smaller screens as well */
+    }
+
+    .month {
+        padding: 10px;
+    }
+
+    .month h2 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    .day {
+        padding: 5px;
+        margin: 3px;
+    }
 }
